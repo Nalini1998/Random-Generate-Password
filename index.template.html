@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Random Password Generator</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Password Generator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"> 
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    
+    body {
+      font-family: "roboto", sans-serif;
+
+      size: 13px;
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #e6ffff;
+      line-height: 12px;
+      margin: 50px 40px;
+      width: 90%;
+      border: 1px solid black;
+      padding: 15px;
+      text-align: center;
+      box-sizing: border-box;
+      border-radius: 20px;
+      background: linear-gradient(to bottom right, #ccffff 0%, #ffffff 100%);
+      color: #330000;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    h1 {
+      text-align: center;
+      text-shadow: 3px 3px 3px #ababab;
+      width: 100%;
+      font-size: 29px;
+      color: #505050;     
+      font-weight: 600;
+      margin-top: 8px;
+      margin-bottom: 20px;
+      font-family: "Sofia", sans-serif;
+    }
+
+    label {
+      display: contents;
+      font-weight: 400;
+      padding: 10px;
+      margin: 10px;
+      line-height: 28px;
+    }
+
+    input {
+      display: flex;
+      margin: 20px auto;
+      padding: 10px 10px;
+      border: none;
+      background-color: #A52A2A;
+      color: white;
+      border-radius: 20px;
+      cursor: grabbing;
+      font-weight: bold;
+      align-items: center;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    #password {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      width: 100%;
+    }
+    
+    #password:hover {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 600;
+      width: 100%;
+      transition: font-size 0.5s;
+    }
+    
+    #aside {
+      align-items: center;
+      justify-content: center;
+      width: 45%;
+    }
+
+    #aside img {
+      width: 100%;
+    }
+    
+    .frame {
+      width: 100%;
+      margin: 30px auto;
+      text-align: center;
+    }
+    
+  .custom-btn {
+    margin: 30px auto;
+    width: 120px;
+    height: 30px;
+    border-radius: 20px;
+    padding: 10px 4px;
+    font-weight: 600;
+    background: transparent;
+    cursor: grabbing;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+
+.btn-1{
+  position: relative;
+  bottom: 20px;
+  border:none;
+  box-shadow: none;
+  width: 140px;
+  height: 70px;
+  -webkit-perspective: 250px;
+  perspective: 250px;
+  margin-right: 10px;
+  line-height: 30px;
+  border-radius: 20px;
+}
+.btn-1 span {
+  background: rgb(0,172,238);
+  background: linear-gradient(0deg, rgb(214, 242, 253) 0%, rgba(2,126,251,1) 100%);
+  display: block;
+  position: absolute;
+  width: 130px;
+  height: 30px;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  border-radius: 20px;
+  text-align: middle;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.btn-1 span:nth-child(1) {
+  box-shadow:
+   -7px -7px 8px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: 50% 50% -40px;
+  -moz-transform-origin: 50% 50% -60px;
+  transform-origin: 50% 50% -10px;
+  border-radius: 20px;
+}
+.btn-1 span:nth-child(2) {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+  border-radius: 20px;
+}
+.btn-1:hover span:nth-child(1) {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+  7px 7px 20px 0px rgba(0,0,0,.1),
+  4px 4px 5px 0px rgba(0,0,0,.1);
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  border-radius: 20px;
+}
+.btn-1:hover span:nth-child(2) {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+  7px 7px 20px 0px rgba(0,0,0,.1),
+  4px 4px 5px 0px rgba(0,0,0,.1);
+  color: transparent;
+  -webkit-transform: rotateX(-450deg);
+  -moz-transform: rotateX(-450deg);
+  transform: rotateX(-450deg);
+  border-radius: 20px;
+}
+   
+  </style>  
+  <body>
+<h6 class="w3-opacity w3-hover-opacity-off"><span class="w3-center	fa fa-paw"></span><b> Power By:</b> Meow.Nalini98</h6>
+    <h1 class="w3-hover-opacity">Random Password Generator</h1>
+    <div>
+      <label for="length"><b class="w3-hover-opacity">Password Length:</b></label>
+      <input class="w3-hover-opacity" type="range" id="length" min="8" value="8">
+      <span id="lengthValue"><b>8</b></span>
+              <br> <br>         <br>
+  <div id="aside" class=" w3-bar-item">
+    <img src="https://3.bp.blogspot.com/-cU27YIT-AQw/XW_DxFGcHjI/AAAAAAAUzeM/x0E91zNzJOgJ687OCZ66DdAMKssSUxfZgCLcBGAs/s1600/AW3993864_01.gif"/>
+  </div>
+    </div>
+    <div class="w3-right w3-margin-left w3-bar-item">
+      <label><b class="w3-hover-opacity">Complexity:</b></label>
+        <br> <br>    <br> 
+<input class="w3-hover-opacity w3-animate-zoom" type="radio" name="complexity" id="easySay" value="easySay" checked>
+          <label class="w3-opacity w3-hover-opacity-off" for="easySay">Easy to Say</label>
+<input class="w3-hover-opacity w3-animate-zoom" type="radio" name="complexity" id="easyRead" value="easyRead">
+            <label class="w3-opacity w3-hover-opacity-off" for="easyRead">Easy to Read</label>
+<input class="w3-hover-opacity w3-animate-zoom" type="radio" name="complexity" id="allCharacters" value="allCharacters"><label for="allCharacters">All Characters</label>
+    </div>
+    <br><br> 
+    <div class="w3-right w3-margin-left w3-bar-item">
+      <label><b class="w3-hover-opacity">Options:</b></label>
+        <br><br>  <br>  
+      <label for="uppercase"><input class="w3-hover-opacity w3-animate-zoom"  type="checkbox" id="uppercase">Uppercase</label>
+      <label class="w3-hover-opacity" for="lowercase"><input class="w3-hover-opacity w3-animate-zoom"  type="checkbox" id="lowercase">Lowercase</label>
+<label class="w3-hover-opacity" for="numbers"><input class="w3-hover-opacity w3-animate-zoom"  type="checkbox" id="numbers">Numbers</label>
+      <label class="w3-hover-opacity" for="symbols"><input class="w3-hover-opacity w3-animate-zoom"  type="checkbox" id="symbols">Symbols</label>
+      <label class="w3-hover-opacity" for="symbols"><input class="w3-hover-opacity w3-animate-zoom"  type="checkbox" id="symbols">Meows</label>
+    </div>
+ <div class="frame">
+    <button class="custom-btn btn-1" id="generate"><span class="w3-hover-opacity w3-hover-large w3-animate-zoom">Password</span><span>Generate</span></button>
+    <button class="custom-btn btn-1" id="copy"><span class="w3-hover-opacity w3-animate-zoom">Clipboard Added</span><span>Copy</span></button>
+    <div class="w3-opacity w3-hover-opacity-off w3-text-hover-red" id="password"></div>
+
+    </div>
+    </div>
+
+    <script>
+var range = document.getElementById("length");
+var lengthValue = document.getElementById("lengthValue");
+var easySay = document.getElementById("easySay");
+var easyRead = document.getElementById("easyRead");
+var allCharacters = document.getElementById("allCharacters");
+var uppercase = document.getElementById("uppercase");
+var lowercase = document.getElementById("lowercase");
+var numbers = document.getElementById("numbers");
+var symbols = document.getElementById("symbols");
+var generateButton = document.getElementById("generate");
+var copyButton = document.getElementById("copy");
+var passwordField = document.getElementById("password");
+
+var easySayCharacters = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789";
+var easyReadCharacters = "abcdefghijklmnopqrstuvwxyz123456789";
+var allCharactersList = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+~`|}{[]\\:;?><,./-=";
+var meow = "✿";
+
+range.addEventListener("input", function () {
+  lengthValue.innerText = range.value;
+});
+
+generateButton.addEventListener("click", function () {
+  var passwordLength = range.value;
+  var characters = "";
+  var password = "";
+
+  if (easySay.checked) {
+    characters = easySayCharacters;
+  } else if (easyRead.checked) {
+    characters = easyReadCharacters;
+  } else {
+    characters = allCharactersList;
+  }
+
+  if (uppercase.checked) {
+    characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  }
+
+  if (lowercase.checked) {
+    characters += "abcdefghijklmnopqrstuvwxyz";
+  }
+
+  if (numbers.checked) {
+    characters += "0123456789";
+  }
+
+  if (symbols.checked) {
+    characters += "!@#$%^&*()_+~`|}{[]\\:;?><,./-=";
+  }
+
+  if (meow.checked) {
+      characters += "✿";
+    }
+  
+passwordField.innerText = ""; // clear password field before typing
+
+  var i = 0;
+  var speed = 50;
+  function typeWriter() {
+    if (i < passwordLength) {
+      var char = characters.charAt(Math.floor(Math.random() * characters.length));
+      passwordField.innerText += char;
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  typeWriter();
+});
+
+copyButton.addEventListener("click", function () {
+  var textarea = document.createElement("textarea");
+  textarea.value = passwordField.innerText;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+  alert("Password copied to clipboard!");
+});
+    </script>
+  </body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
